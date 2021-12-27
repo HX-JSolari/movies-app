@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: 'Laro', sans-serif;
+}
+
+.container-pages {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container-navBar {
+  flex: 0 0 auto;
+}
+
+.container-forComponents {
+  flex: 1 0 auto
+}
