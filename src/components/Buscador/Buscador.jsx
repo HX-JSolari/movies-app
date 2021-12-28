@@ -1,5 +1,5 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, {useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import getTittles from "../../redux/actions";
 import './Buscador.css';
@@ -7,12 +7,22 @@ import './Buscador.css';
 
 const Buscador = () => {
 
-  /* onChange={(e) => handleChange(e)} */
   const dispatch = useDispatch()
+
+  const movies = useSelector((state) => state.tittles)
+  
+
+  const [tittle, setTittle] = useState('')
+  
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    setTittle(e.target.value)
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(getTittles(e.target.value))
+    dispatch(getTittles(tittle))
   }
 
   return (
@@ -25,13 +35,18 @@ const Buscador = () => {
               type="text"
               id="title"
               autoComplete="off"
-              value={}
+              value={tittle}
+              onChange={(e) => handleChange(e)}
             />
           </div>
           <button type="submit">BUSCAR</button>
         </form>
         <ul>
-     
+           { movies?.map((movis, i) => 
+                <li key={i}>
+                  <h1>{movis?.Title}</h1>
+                </li> 
+            )}
         </ul>
       </div>
   )
