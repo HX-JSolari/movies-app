@@ -9,9 +9,7 @@ const Buscador = () => {
 
   const dispatch = useDispatch()
 
-  const movies = useSelector((state) => state.tittles)
-  
-
+  const movies = useSelector((state) => state.titles)
   const [tittle, setTittle] = useState('')
   
 
@@ -27,10 +25,9 @@ const Buscador = () => {
 
   return (
       <div className="container-buscador">
-        <h2>Buscador</h2>
+        {/* <h2>Buscador</h2> */}
        <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
-          <div>
-            <label className="label" htmlFor="title">Película: </label>
+            <label className="label" htmlFor="title">Type for a title: </label>
             <input
               type="text"
               id="title"
@@ -38,16 +35,17 @@ const Buscador = () => {
               value={tittle}
               onChange={(e) => handleChange(e)}
             />
-          </div>
-          <button type="submit">BUSCAR</button>
+          <button type="submit">SEARCH</button>
         </form>
-        <ul>
-           { movies?.map((movis, i) => 
-                <li key={i}>
-                  <h1>{movis?.Title}</h1>
-                </li> 
-            )}
-        </ul>
+        <div className="container-ul">
+          <ul className="ul-list">
+            { movies?.map((movis, i) => 
+                  <li key={i}>
+                    <h1>{movis?.Title}</h1>
+                  </li> 
+              )}
+          </ul>
+        </div>
       </div>
   )
 }

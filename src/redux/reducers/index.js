@@ -1,8 +1,8 @@
-import {GET_TITTLES, GET_FAVORITES, DELETE_FAVS} from '../constants/index'
+import {GET_TITLES, GET_FAVORITES, DELETE_FAVS} from '../constants/index'
 
 
 const initialState = {
-    tittles: [],
+    titles: [],
     favsMovies: [],
     detail: {}
 }
@@ -10,10 +10,10 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     console.log('Action t', action.payload)
     switch(action.type) {
-        case GET_TITTLES: 
+        case GET_TITLES: 
             return {
                 ...state,
-                tittles: action.payload
+                titles: action.payload
             }
         case GET_FAVORITES:
             return {
