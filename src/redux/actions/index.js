@@ -2,7 +2,7 @@ import {GET_TITLES, GET_FAVORITES, DELETE_FAVS} from '../constants/index'
 import axios from 'axios'
 const API_KEY = '583cf928' 
 
-export default function getTittles(tittle) {
+export const getTittles = (tittle) => {
     return async function(dispatch){
         return await axios(`https://omdbapi.com/?s=${tittle}&plot=full&apikey=${API_KEY}`)
         .then(json => {
@@ -14,5 +14,22 @@ export default function getTittles(tittle) {
     }
 };
 
+export const getFavorite = (id) => {
+    return function(dispatch) {
+        dispatch({
+            type: GET_FAVORITES,
+            payload: id
+        })
+    }
+}
+
+export const deleteFavorites = (id) => {
+    return function(dispatch){
+        dispatch({
+            type: DELETE_FAVS,
+            payload: id
+        })
+    }
+}
 
 

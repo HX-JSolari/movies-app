@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import getTittles from "../../redux/actions";
+import { getTittles } from "../../redux/actions/index";
+import ItemList from "../itemList/ItemList";
 import './Buscador.css';
 
 
@@ -10,8 +11,9 @@ const Buscador = () => {
   const dispatch = useDispatch()
 
   const movies = useSelector((state) => state.titles)
+  console.log('SOY MOVIES', movies ? movies : null)
+
   const [tittle, setTittle] = useState('')
-  
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -40,9 +42,7 @@ const Buscador = () => {
         <div className="container-ul">
           <ul className="ul-list">
             { movies?.map((movis, i) => 
-                  <li key={i}>
-                    <h1>{movis?.Title}</h1>
-                  </li> 
+                 <ItemList movis={movis}/>
               )}
           </ul>
         </div>
