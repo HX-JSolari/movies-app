@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import {getFavorite, deleteFavorites} from '../../redux/actions/index'
+import {getFavorite, deleteFavorites} from '../../redux/actions/index';
+import './itemList.css'
 
 const ItemList = ({movis}) => {
 
@@ -23,7 +24,7 @@ const ItemList = ({movis}) => {
 
     
     return (
-        <li>
+        <li className='list-item'>
             <div className="movi-container">
                 <div className="img-container">
                     <img className='movi-img' src={movis.Poster}/>

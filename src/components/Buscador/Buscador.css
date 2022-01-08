@@ -45,6 +45,13 @@
     
 }
 
+.arrow {
+    height: 100%;
+    width: 2em;
+    color: white;
+    z-index: 10000;
+}
+
 .ul-list {
     display: flex;
     flex-direction: row;

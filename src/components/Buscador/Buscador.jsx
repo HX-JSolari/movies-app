@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { getTittles } from "../../redux/actions/index";
+import {ArrowBackIosNew, ArrowForwardIos} from "@mui/icons-material"
 import ItemList from "../itemList/ItemList";
 import './Buscador.css';
 
@@ -40,11 +41,17 @@ const Buscador = () => {
           <button type="submit">SEARCH</button>
         </form>
         <div className="container-ul">
-          <ul className="ul-list">
-            { movies?.map((movis, i) => 
-                 <ItemList movis={movis}/>
-              )}
-          </ul>
+          <div className="wrapper">
+          <ArrowBackIosNew className="arrow left"/>
+            <div className="container-li">
+              <ul className="ul-list">
+                { movies?.map((movis, i) => 
+                    <ItemList movis={movis}/>
+                  )}
+              </ul>
+            </div>
+          <ArrowForwardIos className="arrow rigth"/>  
+          </div>
         </div>
       </div>
   )
