@@ -14,7 +14,6 @@ const ItemList = ({movis}) => {
 
     useEffect(() => {
      setCheck(favsM.includes(imdbID))
-     console.log('favs ESTOY EN HANDLE USEFF', check)
     }, [favsM])
     
     const handleFav = (e) => {
@@ -24,18 +23,18 @@ const ItemList = ({movis}) => {
 
     
     return (
-        <li className='list-item'>
             <div className="movi-container">
-                <div className="img-container">
-                    <img className='movi-img' src={movis.Poster}/>
-                    </div>
-                        <div className="data-container">
-                            <h2>{movis.Title}</h2>
-                        <p>Year: {movis.Year}</p>
-                    <span /* className={check? "favOk" : "notFav"} */ onClick={(e) => handleFav(e)}><FavoriteIcon/></span>
+                <div className="img-div">
+                    <img className='movi-img' src={Poster}/>
+                </div>
+                <div className="data-container">
+                            <h2>{Title}</h2>
+                <div className="fav-container">
+                        <p>Year: {Year}</p>
+                        <span /* className={check? "favOk" : "notFav"} */ onClick={(e) => handleFav(e)}><FavoriteIcon/></span>
+                </div>
                 </div>
             </div>
-        </li>
     )
 }
 
