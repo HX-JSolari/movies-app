@@ -4,16 +4,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid;
-    min-height: 70vh;
+    min-height: 20vh;
     overflow: hidden;
-    background-color: rgba(66, 61, 61, 0.753);
 }
 
 .container-buscador > span {
     align-self: flex-end;
     padding-right: 1.5em; 
-    background-color: aqua;  
+    background-color: rgb(241, 245, 245);  
 }
 
 .form-container {
@@ -70,7 +68,7 @@
 
 .label {
     padding-right: 10px;
-    color:rgba(66, 61, 61, 0.945);
+    color:#e5e5e5;
     font-size: 1.5rem;
 }
 

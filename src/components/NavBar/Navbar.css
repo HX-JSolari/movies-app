@@ -1,7 +1,6 @@
 .navbar {
     height: 56px;
     width: 100%;
-    background-color: #303236;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -31,14 +30,15 @@
 }
 
 .list-item a {
-    color: white;
+    color: rgba(255, 255, 255, 0.74);
     height: 100%;
     padding: 16px 10px;
-    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    /* border-bottom: 4px solid transparent; */
+    font-weight: 400;
 }
 
-.list-item a:hover,
 .list-item a.active {
-    background-color: #808080;
     color: white;
+    font-weight: 700;
 }

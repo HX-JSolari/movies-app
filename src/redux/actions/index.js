@@ -1,4 +1,4 @@
-import {GET_TITLES, GET_FAVORITES, DELETE_FAVS} from '../constants/index'
+import {GET_TITLES, GET_FAVORITES, DELETE_FAVS, SORT} from '../constants/index'
 import axios from 'axios'
 const API_KEY = '583cf928' 
 
@@ -28,6 +28,14 @@ export const deleteFavorites = (id) => {
         dispatch({
             type: DELETE_FAVS,
             payload: id
+        })
+    }
+}
+
+export const sortByYear = () => {
+    return function(dispatch){
+        dispatch({
+            type: SORT
         })
     }
 }
