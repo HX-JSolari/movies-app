@@ -17,6 +17,8 @@ const Buscador = () => {
 
   const [tittle, setTittle] = useState('')
 
+  
+
   const handleChange = (e) => {
     e.preventDefault()
     setTittle(e.target.value)
@@ -43,7 +45,7 @@ const Buscador = () => {
         </form>
         {movies.length > 1 ?
         <div className="sort-tittle">
-          <span className="title">Movies</span>
+          <span className="titleS">Movies</span>
           <span><SortIcon/></span> 
         </div> : null}
         { movies.length > 1 ?

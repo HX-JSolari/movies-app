@@ -13,14 +13,13 @@
     justify-content: space-between;
     width: 100%;
     font-weight: 500;
-    color:#e5e5e5;
-    /* font-size: 0.2rem; */
+    color:#ffffff;
 }
 
-/* .title {
-    font-size: 10px;
-    padding-left: 0.5em
-} */
+.titleS {
+    font-size: 1.5rem;
+    padding-left: 2.1em
+} 
 
 
 .form-container {
