@@ -8,7 +8,7 @@
 }
 
 .img-div {
-    height: 70%;
+    height: 80%;
     border: 1.5px solid black;
     border-radius: 1%;
     display: flex;
@@ -22,7 +22,8 @@
 .data-container {
     display: flex;
     flex-direction: column;
-    margin-left: 1em;
+    margin-left: 1.2em;
+    margin-top: 0.5em;
     font-size: 0.8rem;
     width: 90%;
     min-height: 15%;
@@ -40,6 +41,7 @@
 }
 
 .fav-container > p {
-    text-decoration:underline;
+    text-decoration: underline;
+    padding-top: 0.4em;
 }
 

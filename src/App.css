@@ -5,24 +5,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 .body {
   font-family: 'Laro', sans-serif;
 }
 
-.container-pages {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.952);
-}
 
 
-.container-navBar {
-  flex: 0 0 auto;
-}
-
-.container-forComponents {
-  flex: 1 0 auto
-}

@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
+import NavBar from '../NavBar/NavBar'
 import { Link } from 'react-router-dom';
 import { getTittles } from "../../redux/actions/index";
-import {ArrowBackIosNew, ArrowForwardIos} from "@mui/icons-material"
+import {MdOutlineArrowBackIosNew} from "react-icons/md"
 import SortIcon from '@mui/icons-material/Sort';
 import ItemList from "../itemList/ItemList";
 import './Buscador.css';
@@ -28,6 +29,7 @@ const Buscador = () => {
 
   return (
       <div className="container-buscador">
+        <NavBar/>
        <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
             <label className="label" htmlFor="title">Type for a title: </label>
             <input
@@ -39,18 +41,21 @@ const Buscador = () => {
             />
           <button type="submit">SEARCH</button>
         </form>
-        {movies.length > 1 ? 
-        <span><SortIcon/></span> : null}
+        {movies.length > 1 ?
+        <div className="sort-tittle">
+          <span className="title">Movies</span>
+          <span><SortIcon/></span> 
+        </div> : null}
         { movies.length > 1 ?
           <div className="container-ul">
           <div className="wrapper">
-          <ArrowBackIosNew className="arrow left"/>
+          <MdOutlineArrowBackIosNew className="arrowleft"/>
             <div className="container-li">  
                 { movies?.map((movis, i) => 
                     <ItemList key={i} movis={movis}/>
                   )}
             </div>
-          <ArrowForwardIos className="arrow rigth"/>  
+          <MdOutlineArrowBackIosNew className="arrow rigth"/>  
           </div>
         </div> : null}
       </div>
