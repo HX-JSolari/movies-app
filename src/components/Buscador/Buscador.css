@@ -55,23 +55,37 @@
 
  .wrapper {
     display: flex;
-    width: max-content;
     font-size: 1rem;
+    position: relative;
 } 
 
-.arrowleft {
+.arrowLeft, .arroRigth {
     font-size: 2rem;
     width: 45px;
-    height: 75%;
+    height: 80%;
     margin-bottom: 2em;
     color: white;
+    position: absolute;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.arrowLeft {
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.arroRigth {
+    right: 0; 
+    margin-right: 1.46em;
+    background-color: rgba(0, 0, 0, 0.507)
 }
 
 .container-li {
     display: flex;
     flex-direction: row;
-    overflow: hidden;
-    margin-left: 1em;
+    width: 100vw;
+    margin-left: 2.89em;
 }
 
 .form-container > input {

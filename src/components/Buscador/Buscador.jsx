@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import NavBar from '../NavBar/NavBar'
 import { Link } from 'react-router-dom';
 import { getTittles } from "../../redux/actions/index";
-import {MdOutlineArrowBackIosNew} from "react-icons/md"
+import {MdOutlineArrowBackIosNew, MdArrowForwardIos} from "react-icons/md"
 import SortIcon from '@mui/icons-material/Sort';
 import ItemList from "../itemList/ItemList";
 import './Buscador.css';
@@ -51,13 +51,13 @@ const Buscador = () => {
         { movies.length > 1 ?
           <div className="container-ul">
           <div className="wrapper">
-          <MdOutlineArrowBackIosNew className="arrowleft"/>
-            <div className="container-li">  
+          <MdOutlineArrowBackIosNew className="arrowLeft"/>
+           <div className="container-li">  
                 { movies?.map((movis, i) => 
                     <ItemList key={i} movis={movis}/>
                   )}
-            </div>
-          <MdOutlineArrowBackIosNew className="arrow rigth"/>  
+            </div> 
+          <MdArrowForwardIos className="arroRigth"/>  
           </div>
         </div> : null}
       </div>
