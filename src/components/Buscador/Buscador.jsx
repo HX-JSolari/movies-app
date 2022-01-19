@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from '../NavBar/NavBar'
 import { Link } from 'react-router-dom';
@@ -17,7 +17,13 @@ const Buscador = () => {
 
   const [tittle, setTittle] = useState('')
 
-  
+  const listRef = useRef()
+
+  const handleClick = (direction) => {
+    if(direction === "left"){ 
+    listRef.current.style.transform = `translateX(230px)`
+    }
+  }
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -51,13 +57,13 @@ const Buscador = () => {
         { movies.length > 1 ?
           <div className="container-ul">
           <div className="wrapper">
-          <MdOutlineArrowBackIosNew className="arrowLeft"/>
-           <div className="container-li">  
+          <MdOutlineArrowBackIosNew className="arrowLeft" onClick={() => handleClick("left")}/>
+           <div className="container-li" ref={listRef}>  
                 { movies?.map((movis, i) => 
                     <ItemList key={i} movis={movis}/>
                   )}
             </div> 
-          <MdArrowForwardIos className="arroRigth"/>  
+          <MdArrowForwardIos className="arroRigth" onClick={() => handleClick("rigth")}/>  
           </div>
         </div> : null}
       </div>
