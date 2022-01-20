@@ -27,8 +27,7 @@ const Buscador = () => {
     if(direction === "left" && slideNumber > 0){
       setSlideNumber(slideNumber - 1)
       if(slideNumber === 1){
-        listRef.current.style.transform = `translateX(0px)`
-        console.log('SOYYY LISTREF', listRef.current.style.transform)
+        listRef.current.style.transform = `translateX(1px)`
         setIsMoved(false)
       }
     listRef.current.style.transform = `translateX(${266 + distance}px)`
