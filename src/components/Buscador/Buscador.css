@@ -87,6 +87,7 @@
     width: 100vw;
     transform: translateX(0px);
     margin-left: 2.89em;
+    transition: all 1s ease;
 }
 
 .form-container > input {
