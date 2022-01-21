@@ -1,3 +1,10 @@
+.favs-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.928);
+}
+
 .cnt {
     padding-top: 10px;
 }

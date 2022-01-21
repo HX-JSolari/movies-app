@@ -1,0 +1,52 @@
+/* Slider movies */
+.slider-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    height: 68vh;
+    overflow: hidden;
+}
+
+ .wrapper {
+    display: flex;
+    font-size: 1rem;
+    position: relative;
+} 
+
+.arrowLeft, .arroRigth {
+    font-size: 2rem;
+    width: 45px;
+    height: 80%;
+    margin-bottom: 2em;
+    color: white;
+    position: absolute;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.arrowLeft {
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.arroRigth {
+    right: 0; 
+    margin-right: 1.46em;
+    background-color: rgba(0, 0, 0, 0.507)
+}
+
+.container-li {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    transform: translateX(0px);
+    margin-left: 2.89em;
+    transition: all 1s ease;
+}
+

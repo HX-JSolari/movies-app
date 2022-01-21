@@ -31,7 +31,7 @@ const ItemList = ({movis}) => {
                             <h2>{Title}</h2>
                 <div className="fav-container">
                         <p>Year: {Year}</p>
-                        <span /* className={check? "favOk" : "notFav"} */ onClick={(e) => handleFav(e)}><FavoriteIcon/></span>
+                        <span className={check? "favOk" : "notFav"} onClick={(e) => handleFav(e)}><FavoriteIcon/></span>
                 </div>
                 </div>
             </div>
