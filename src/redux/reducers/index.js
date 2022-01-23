@@ -16,14 +16,16 @@ export default function reducer(state = initialState, action) {
                 titles: action.payload
             }
         case GET_FAVORITES:
-            return {
-                ...state,
-                favsMovies: [...state.favsMovies, action.payload]
-            }
-        case DELETE_FAVS:
-            return {
-                ...state,
-                favsMovies: state.favsMovies.filter(movie => movie !== action.payload)
+            if(!state.favsMovies.includes(action.payload)) {
+                return {
+                    ...state,
+                    favsMovies: [...state.favsMovies, action.payload]
+                }
+            } else {
+                return {
+                    ...state,
+                    favsMovies: state.favsMovies.filter(favs => favs !== action.payload)
+                }
             }
         case SORT:
             return {

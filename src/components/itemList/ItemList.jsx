@@ -14,6 +14,7 @@ const ItemList = ({movis}) => {
 
     useEffect(() => {
      setCheck(favsM.includes(imdbID))
+     console.log('soy CHEK DE EFFECT', check)
     }, [favsM])
     
     const handleFav = (e) => {

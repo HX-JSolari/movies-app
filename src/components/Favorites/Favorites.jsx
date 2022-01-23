@@ -21,9 +21,15 @@ const Favorites = () => {
         <NavBar/>
         <h2>Películas Favoritas</h2>
         <div className="container-favs">
-          {filterMovies?.map((e, i) => 
-            <ItemList key={i} movis={e[0]}/>
-          )}
+          {filterMovies.length > 0 ? 
+            filterMovies?.map((e, i) =>
+              <div className="items-favs">
+                <ItemList key={i} movis={e[0]}/>
+              </div>
+          ) : 
+          <div className="notFavoYet">
+            <h2>You dont have movies yet, go back and search for those!</h2>
+            </div>}
         </div>
       </div>
   )

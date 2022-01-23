@@ -45,3 +45,11 @@
     padding-top: 0.4em;
 }
 
+.favOk {
+    color: rgba(255, 238, 0, 0.911);
+}
+
+.notFav {
+    color: none;
+}
+

@@ -1,8 +1,30 @@
 .favs-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
     min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.928);
+}
+
+.favs-container > h2 {
+    margin-left: 3em;
+    border-bottom: 1px solid;
+    color: #e5e5e5;
+    margin-bottom: 0.5em;
+    align-self: flex-start;
+}
+
+.container-favs {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;    
+    justify-content: flex-start;
+    margin-left: 3em;
+}
+
+.items-favs {
+    width: 49%;
+    margin-bottom: 1em; 
 }
 
 .cnt {
