@@ -45,6 +45,10 @@
     padding-top: 0.4em;
 }
 
+.fav-container > span {
+    cursor: pointer;
+}
+
 .favOk {
     color: rgba(255, 238, 0, 0.911);
 }
