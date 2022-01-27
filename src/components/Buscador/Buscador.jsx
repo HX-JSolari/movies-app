@@ -6,6 +6,7 @@ import { getTittles } from "../../redux/actions/index";
 import {MdOutlineArrowBackIosNew, MdArrowForwardIos} from "react-icons/md"
 import SortIcon from '@mui/icons-material/Sort';
 import ItemList from "../itemList/ItemList";
+import img from '../../media/serchGif.gif' 
 import './Buscador.css';
 
 
@@ -50,10 +51,11 @@ const Buscador = () => {
     dispatch(getTittles(tittle)) 
     setTimeout(() => {
       setLoader(false)
-    }, 1500);
+    }, 2000);
   }
 
   return (
+            
       <div className="container-buscador">
         <NavBar/>
        <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
@@ -67,15 +69,19 @@ const Buscador = () => {
             />
           <button type="submit">SEARCH</button>
         </form>
-        {movies.length > 1 ?
+        
+        {!loader && movies.length > 1 ?
         <div className="sort-tittle">
           <span className="titleS">Movies</span>
           <span><SortIcon/></span> 
         </div> : null}
-        { loader ? 
-        <span>Searching your movies, friend...</span> 
-        :
-         movies.length > 1 ?
+        {loader ?
+        <div className="loader">
+          <span>Searching your movies, friend</span>
+          <img className="img-loader" src={img}/>
+        </div> 
+        : 
+        movies.length > 1 ?
           <div className="container-ul">
           <div className="wrapper">
           <MdOutlineArrowBackIosNew 
@@ -96,8 +102,8 @@ const Buscador = () => {
           </div>
         </div> : null
         }
-      </div>
-  )
+        </div>
+        )
 }
 
 export default Buscador
