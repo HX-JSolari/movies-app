@@ -18,6 +18,7 @@ const Buscador = () => {
   const [tittle, setTittle] = useState('')
   const [slideNumber, setSlideNumber] = useState(0)
   const [isMoved, setIsMoved] = useState(false)
+  const [loader, setLoader] = useState(false)
 
   const listRef = useRef()
 
@@ -45,7 +46,11 @@ const Buscador = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(getTittles(tittle))
+    setLoader(true)
+    dispatch(getTittles(tittle)) 
+    setTimeout(() => {
+      setLoader(false)
+    }, 1500);
   }
 
   return (
@@ -67,7 +72,10 @@ const Buscador = () => {
           <span className="titleS">Movies</span>
           <span><SortIcon/></span> 
         </div> : null}
-        { movies.length > 1 ?
+        { loader ? 
+        <span>Searching your movies, friend...</span> 
+        :
+         movies.length > 1 ?
           <div className="container-ul">
           <div className="wrapper">
           <MdOutlineArrowBackIosNew 
@@ -86,7 +94,8 @@ const Buscador = () => {
           style={{display: slideNumber === 6 && "none"}}
           />  
           </div>
-        </div> : null}
+        </div> : null
+        }
       </div>
   )
 }
