@@ -17,7 +17,8 @@ export default function reducer(state = initialState, action) {
             }
         case GET_FAVORITES:
             // i need all this things, because if the user has maked two searchs, whitout THIS the first one(search) will dissapear.
-            let movies = state.titles.filter(m => m.imdbID === action.payload)
+            const oldMovies = state.titles
+            let movies = oldMovies.filter(m => m.imdbID === action.payload)
             if(state.favsMovies.length === 0){
                 return {
                     ...state,

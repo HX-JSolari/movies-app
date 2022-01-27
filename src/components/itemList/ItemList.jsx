@@ -11,7 +11,7 @@ const ItemList = ({movis}) => {
     
     const favsM = useSelector(state => state.favsMovies)
     console.log('soy favs movies', favsM)
-    const [check, setCheck] = useState(favsM.map(e => e.imdbID).includes(imdbID))
+    const [check, setCheck] = useState(false)
 
     useEffect(() => {
      setCheck(favsM.map(e => e.imdbID).includes(imdbID))
