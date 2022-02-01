@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import {getFavorite} from '../../redux/actions/index';
+import { getFavorite, getDetail } from '../../redux/actions/index';
 import './itemList.css'
 
 const ItemList = ({movis}) => {
@@ -10,17 +10,19 @@ const ItemList = ({movis}) => {
     const dispatch = useDispatch()
     
     const favsM = useSelector(state => state.favsMovies)
-    console.log('soy favs movies', favsM)
     const [check, setCheck] = useState(false)
 
     useEffect(() => {
      setCheck(favsM.map(e => e.imdbID).includes(imdbID))
-     console.log('soy CHEK DE EFFECT', check)
     }, [favsM])
     
     const handleFav = (e) => {
         e.preventDefault()
         dispatch(getFavorite(imdbID))
+    }
+    const handleDetail = (e) => {
+        e.preventDefault()
+        dispatch(getDetail(imdbID))
     }
 
     
@@ -30,7 +32,7 @@ const ItemList = ({movis}) => {
                     <img className='movi-img' src={Poster}/>
                 </div>
                 <div className="data-container">
-                            <h2>{Title}</h2>
+                            <h2 onClick={e => handleDetail()}>{Title}</h2>
                 <div className="fav-container">
                         <p>Year: {Year}</p>
                         <span className={check? "favOk" : "notFav"} onClick={(e) => handleFav(e)}><FavoriteIcon/></span>

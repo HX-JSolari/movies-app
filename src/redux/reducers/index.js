@@ -1,4 +1,4 @@
-import {GET_TITLES, GET_FAVORITES, DELETE_FAVS, SORT} from '../constants/index'
+import {GET_TITLES, GET_FAVORITES, SORT} from '../constants/index'
 
 
 const initialState = {
