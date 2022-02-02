@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { getFavorite, getDetail } from '../../redux/actions/index';
+import { NavLink } from 'react-router-dom';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import './itemList.css'
 
 const ItemList = ({movis}) => {
@@ -32,7 +33,9 @@ const ItemList = ({movis}) => {
                     <img className='movi-img' src={Poster}/>
                 </div>
                 <div className="data-container">
-                            <h2 onClick={e => handleDetail()}>{Title}</h2>
+                    <NavLink exact to='/details' onClick={(e) => handleDetail(e)}>
+                            <h2 /* onClick={e => handleDetail(e)} */>{Title}</h2>
+                    </NavLink>
                 <div className="fav-container">
                         <p>Year: {Year}</p>
                         <span className={check? "favOk" : "notFav"} onClick={(e) => handleFav(e)}><FavoriteIcon/></span>

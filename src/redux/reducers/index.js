@@ -1,10 +1,10 @@
-import {GET_TITLES, GET_FAVORITES, SORT} from '../constants/index'
+import {GET_TITLES, GET_FAVORITES, SORT, GET_DETAILS} from '../constants/index'
 
 
 const initialState = {
     titles: [],
     favsMovies: [],
-    detail: {}
+    details: {}
 }
 
 export default function reducer(state = initialState, action) {
@@ -42,6 +42,11 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 titles: [...state.titles].sort((a, b) => a.Year < b.Year ? -1 : 1)
+            }
+        case GET_DETAILS:
+            return {
+                ...state,
+                detail: action.payload
             }
         default: 
             return state

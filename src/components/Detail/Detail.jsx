@@ -1,14 +1,16 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { getDetail } from '../../redux/actions';
+import { useSelector } from 'react-redux';
+import NavBar from '../NavBar/NavBar';
 import './detail.css';
 
-const Detail = ({id}) => {
+const Detail = () => {
 
-    const dispatch = useDispatch()
+    const detail = useSelector(state => state.details)
+    console.log(detail)
 
   return (
-  <div className='detail-container'>
+    <div /* className='detail-container' */>
+    <NavBar />
 
   </div>
   );

@@ -28,9 +28,11 @@
     width: 90%;
     min-height: 15%;
     color: #e5e5e5;
+    list-style: none;
 }
 .data-container > h2 {
     width: 100%;
+    list-style: none;
 }
 
 .fav-container {
