@@ -47,7 +47,7 @@ export default function reducer(state = initialState, action) {
             console.log()
             return {
                 ...state,
-                detail: {...action.payload}
+                details: {...action.payload}
             }
         default: 
             return state
