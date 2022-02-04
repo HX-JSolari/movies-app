@@ -17,11 +17,12 @@ export const getTittles = (tittle) => {
 
 export const getDetail = (id) => {
     return async function(dispatch){
-        return await axios(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=${API_KEY}`)
+        return await axios(`https://omdbapi.com/?i=${id}&plot=full&apikey=${API_KEY}`)
         .then(json => {
+            console.log('soy JSON', json.data)
             dispatch({
                 type: GET_DETAILS,
-                payload: json.data.Search
+                payload: json.data
             })
         })
     }

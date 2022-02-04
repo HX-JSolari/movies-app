@@ -44,9 +44,10 @@ export default function reducer(state = initialState, action) {
                 titles: [...state.titles].sort((a, b) => a.Year < b.Year ? -1 : 1)
             }
         case GET_DETAILS:
+            console.log()
             return {
                 ...state,
-                detail: action.payload
+                detail: {...action.payload}
             }
         default: 
             return state
